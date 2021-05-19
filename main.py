@@ -50,3 +50,7 @@ for item in items:
     print(item[0] + " " + item[1] + " | " + item[2] + " ")
 conn.commit()
 conn.close()
+c.execute("INSERT INTO clientes VALUES ('Susana', 'Distancia', 'distasus@gob.mx')")
+print("Datos agregados exitosamente")
+c.execute("INSERT INTO clientes VALUES ('Manuelito', 'Nunez', 'a1231124@uabc.edu.mx')")
+print("Datos agregados exitosamente")
