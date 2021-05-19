@@ -1,0 +1,2 @@
+Estoy batallando un poco con los entornos virtuales, todo este tiempo los hacia pensando que estaban bien y apenas
+me di cuenta que no se crean las carpetas dentro de mi proyecto o por lo menos no encuentro dondeeeee aaaaah

@@ -23,7 +23,7 @@ conn.close()
 #abrimos nuevamente la conexion
 '''conn = sqlite3.connect("clientes.db")
 c = conn.cursor()
-c.execute("INSERT INTO clientes VALUES ('Manuelito', 'Nunez', 'a1231124@uabc.edu.mx')")
+c.execute("INSERT INTO clientes VALUES ('Manuelito', 'Nunez', 'a1231124@uabc.edu.mx')") #-----------------------------------
 print("Insertar los datos Manuelito Nunez a1231124@uabc.edu.mx")
 print("Datos agregados exitosamente")
 #commit comando
@@ -40,7 +40,7 @@ for item in items:
     print(item[0] + " " + item[1] + " | " + item[2] + " ")
 conn.commit()
 #actualizar un dato
-c.execute('''UPDATE clientes SET nombre = 'bob'
+c.execute('''UPDATE clientes SET nombre = 'Bob' #------------------------------------
 wHERE apellido = 'Nunez'
 ''')
 conn.commit()
@@ -49,8 +49,15 @@ items = c.fetchall()
 for item in items:
     print(item[0] + " " + item[1] + " | " + item[2] + " ")
 conn.commit()
-conn.close()
 c.execute("INSERT INTO clientes VALUES ('Susana', 'Distancia', 'distasus@gob.mx')")
-print("Datos agregados exitosamente")
 c.execute("INSERT INTO clientes VALUES ('Manuelito', 'Nunez', 'a1231124@uabc.edu.mx')")
+c.execute("INSERT INTO clientes VALUES ('Bobo', 'Perez', 'bob4@uabc.edu.mx')")
 print("Datos agregados exitosamente")
+c.execute("DELETE FROM clientes wHERE nombre = 'Bobo'")#-------------------------------------
+print("Datos eliminados exitosamente")
+c.execute("SELECT * FROM clientes")#----------------------------------------
+items = c.fetchall()
+for item in items:
+    print(item[0] + " " + item[1] + " | " + item[2] + " ")
+conn.commit()
+conn.close()
