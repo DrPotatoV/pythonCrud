@@ -21,7 +21,7 @@ conn.commit()
 conn.close()
 ''' #lo puse en comentario porque ya habia creado la tabla haciendo pruebas
 #abrimos nuevamente la conexion
-conn = sqlite3.connect("clientes.db")
+'''conn = sqlite3.connect("clientes.db")
 c = conn.cursor()
 c.execute("INSERT INTO clientes VALUES ('Manuelito', 'Nunez', 'a1231124@uabc.edu.mx')")
 print("Insertar los datos Manuelito Nunez a1231124@uabc.edu.mx")
@@ -30,7 +30,23 @@ print("Datos agregados exitosamente")
 conn.commit()
 #cerrar conexion
 #leer datos
+''' #lo comento porque ya inserte muchas veces lo mismo
 c = conn.cursor()
 c.execute("SELECT * FROM clientes")
 print(c.fetchall())
+c.execute("SELECT * FROM clientes")
+items = c.fetchall()
+for item in items:
+    print(item[0] + " " + item[1] + " | " + item[2] + " ")
+conn.commit()
+#actualizar un dato
+c.execute('''UPDATE clientes SET nombre = 'bob'
+wHERE apellido = 'Nunez'
+''')
+conn.commit()
+c.execute("SELECT * FROM clientes")
+items = c.fetchall()
+for item in items:
+    print(item[0] + " " + item[1] + " | " + item[2] + " ")
+conn.commit()
 conn.close()
